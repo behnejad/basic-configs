@@ -1,0 +1,14 @@
+# aria2c --conf-path=
+dir=/mnt
+save-session=/home/pi/aria2daemon
+input-file=/home/pi/aria2daemon
+continue=true
+daemon=true
+enable-rpc=true
+rpc-listen-all=true
+rpc-allow-origin-all=true
+max-concurrent-downloads=1
+split=6
+max-connection-per-server=16
+file-allocation=trunc
+http-accept-gzip=true
