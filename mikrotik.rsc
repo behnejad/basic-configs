@@ -27,3 +27,4 @@ set route-cache=no
 /system scheduler
 set disabled=yes [find disabled=yes]
 
+/lcd set read-only-mode=yes
