@@ -2,9 +2,6 @@
 set store-leases-disk=never
 set accounting=no
 
-/system logging
-set action=memory [find action="disk"]
-
 /tool graphing
 set store-every=24hours
 interface  set store-on-disk=no [find store-on-disk=yes]
@@ -19,12 +16,11 @@ set account-local-traffic=no
 set enabled=no
 set cache-on-disk=no
 
-/ip settings
-set route-cache=no
-
+/ip settings set route-cache=no
 /tool calea set disabled=yes [find disabled=no]
-
-/system scheduler
-set disabled=yes [find disabled=yes]
-
 /lcd set read-only-mode=yes
+
+/system
+scheduler set disabled=yes [find disabled=no]
+watchdog set automatic-supout=no
+logging set action=memory [find action="disk"]
