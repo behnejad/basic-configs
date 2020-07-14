@@ -1,0 +1,15 @@
+<code_scheme name="Default" version="173">
+  <Objective-C>
+    <option name="NAMESPACE_BRACE_PLACEMENT" value="2" />
+    <option name="FUNCTION_BRACE_PLACEMENT" value="2" />
+  </Objective-C>
+  <codeStyleSettings language="ObjectiveC">
+    <option name="KEEP_BLANK_LINES_IN_DECLARATIONS" value="1" />
+    <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
+    <option name="KEEP_BLANK_LINES_BEFORE_RBRACE" value="0" />
+    <option name="BRACE_STYLE" value="2" />
+    <option name="CLASS_BRACE_STYLE" value="2" />
+    <option name="ELSE_ON_NEW_LINE" value="true" />
+    <option name="ARRAY_INITIALIZER_RBRACE_ON_NEXT_LINE" value="true" />
+  </codeStyleSettings>
+</code_scheme>
