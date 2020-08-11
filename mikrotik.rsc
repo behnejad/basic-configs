@@ -38,3 +38,8 @@ set protected-routerboot=enabled
 set enable-jumper-reset=no
 
 /interface wireless security-profiles set [find disable-pmkid=no] disable-pmkid=yes
+
+
+/tool fetch url=http://www.iwik.org/ipcountry/mikrotik/IR
+/import file-name=IR
+
