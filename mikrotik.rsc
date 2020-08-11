@@ -2,12 +2,6 @@
 set store-leases-disk=never
 set accounting=no
 
-/tool graphing
-set store-every=24hours
-interface  set store-on-disk=no [find store-on-disk=yes]
-queue set store-on-disk=no [find store-on-disk=yes]
-resource set store-on-disk=no [find store-on-disk=yes]
-
 /ip accounting
 set enabled=no
 set account-local-traffic=no
@@ -16,11 +10,31 @@ set account-local-traffic=no
 set enabled=no
 set cache-on-disk=no
 
-/ip settings set route-cache=no
-/tool calea set disabled=yes [find disabled=no]
+/ip settings
+set route-cache=no
+set rp-filter=strict
+
+/ip firewall filter add action=drop chain=forward connection-state=invalid
+
+/ip neighbor discovery-settings set discover-interface-list=none
+
 /lcd set read-only-mode=yes
+
+/tool graphing
+set store-every=24hours
+interface  set store-on-disk=no [find store-on-disk=yes]
+queue set store-on-disk=no [find store-on-disk=yes]
+resource set store-on-disk=no [find store-on-disk=yes]
+
+/tool calea set disabled=yes [find disabled=no]
 
 /system
 scheduler set disabled=yes [find disabled=no]
 watchdog set automatic-supout=no
 logging set action=memory [find action="disk"]
+
+/system routerboard settings
+set protected-routerboot=enabled
+set enable-jumper-reset=no
+
+/interface wireless security-profiles set [find disable-pmkid=no] disable-pmkid=yes
