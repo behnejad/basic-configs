@@ -39,6 +39,8 @@ set enable-jumper-reset=no
 
 /interface wireless security-profiles set [find disable-pmkid=no] disable-pmkid=yes
 
+/interface detect-internet
+set detect-interface-list=none wan-interface-list=none lan-interface-list=none internet-interface-list=none 
 
 /tool fetch url=http://www.iwik.org/ipcountry/mikrotik/IR
 /import file-name=IR
