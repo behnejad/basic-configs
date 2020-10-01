@@ -28,6 +28,8 @@ resource set store-on-disk=no [find store-on-disk=yes]
 
 /tool calea set disabled=yes [find disabled=no]
 
+/tool bandwidth-server set enabled=no
+
 /system
 scheduler set disabled=yes [find disabled=no]
 watchdog set automatic-supout=no
