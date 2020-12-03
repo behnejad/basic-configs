@@ -10,4 +10,6 @@
 9 - W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl - natas dictionary.txt && ls -lsa && cat /etc/natas_webpass/natas10 #
 10 - nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu - -e "" /etc/natas_webpass/natas11
 11 - U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK - qw8J
-12 - EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3 - 
+12 - EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3 - upload nata10
+13 - jmLTY0qiPZBbaKc9341cqPQZBJv7MQbY - upload b'\xFF\xD8\xFF\xE0' + nata10
+14 - Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1 - 
