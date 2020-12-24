@@ -1,0 +1,5 @@
+// DoH List:
+https://github.com/curl/curl/wiki/DNS-over-HTTPS
+
+// Root CA Certificates:
+https://curl.se/ca/cacert.pem
