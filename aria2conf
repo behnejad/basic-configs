@@ -12,3 +12,6 @@ split=6
 max-connection-per-server=16
 file-allocation=trunc
 http-accept-gzip=true
+use-head=true
+check-integrity=true
+enable-http-pipelining=true
