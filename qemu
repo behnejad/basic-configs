@@ -1,0 +1,1 @@
+qemu-system-x86_64 vm.qcow2 -netdev tap,id=mynet0,ifname=tap -device e1000,netdev=mynet0
