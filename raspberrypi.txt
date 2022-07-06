@@ -1,0 +1,2 @@
+manual cd preparation
+blkid /dev/sda1 -> partuuid -> cp -a -> cmdline.txt -> /etc/fstab
