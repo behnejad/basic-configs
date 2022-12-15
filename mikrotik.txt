@@ -1,0 +1,23 @@
+vmware to virtualbox
+<VirtualBox>
+	<Machine>
+		<ExtraData>
+			<ExtraDataItem name="VBoxInternal/Devices/piix3ide/0/Config/PrimaryMaster/FirmwareRevision" value="string:QM00001"/>
+			<ExtraDataItem name="VBoxInternal/Devices/piix3ide/0/Config/PrimaryMaster/ModelNumber" value="string:VMware Virtual IDE Hard Drive"/>
+			<ExtraDataItem name="VBoxInternal/Devices/piix3ide/0/Config/PrimaryMaster/SerialNumber" value="string:00000000000000000001"/>
+		</ExtraData>
+	</VirtualBox>
+</Machine>
+
+qcow2 to virtual box
+<VirtualBox>
+	<Machine>
+		<ExtraData>
+			<ExtraDataItem name="VBoxInternal/Devices/piix3ide/0/Config/PrimaryMaster/FirmwareRevision" value="0.11.1"/>
+			<ExtraDataItem name="VBoxInternal/Devices/piix3ide/0/Config/PrimaryMaster/ModelNumber" value="QEMU HARDDISK"/>
+			<ExtraDataItem name="VBoxInternal/Devices/piix3ide/0/Config/PrimaryMaster/SerialNumber" value="QM00001"/>
+		</ExtraData>
+	</VirtualBox>
+</Machine>
+
+ide0:0.mode = "independent-persistent"
