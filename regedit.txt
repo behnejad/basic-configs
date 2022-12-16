@@ -1,0 +1,2 @@
+services -> Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\
+defender -> HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender DisableAntiSpyware
