@@ -20,4 +20,5 @@ qcow2 to virtual box
 	</VirtualBox>
 </Machine>
 
+cpuid.coresPerSocket = "1"
 ide0:0.mode = "independent-persistent"
