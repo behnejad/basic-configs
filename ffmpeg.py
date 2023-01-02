@@ -1,17 +1,26 @@
 #!/usr/bin/python3
 
 import os, sys
-
+import shutil
 file = None
+ext = None
 srt = []
 for i in os.listdir(sys.argv[1]):
     if ".srt" in i:
         srt.append(i)
-    elif ".mp4" in i or ".mkv" in i:
+    elif ".mkv" in i:
         file = i
+        ext = ".mkv"
+    elif ".mp4" in i:
+        file = i
+        ext = ".mp4"
+    
 srt = sorted(srt, key=lambda x: int(x.split('_')[0]))
 
-cmd = f"ffmpeg -i \"{file}\" "
+if file is None:
+    exit(-1)
+
+cmd = f"ffmpeg -y -hide_banner -i \"{file}\" "
 for i in srt:
     cmd += f"-i {i} "
 
@@ -27,3 +36,7 @@ cmd += "result.mkv"
 print(cmd)
 os.chdir(sys.argv[1])
 os.system(cmd)
+os.rename(file, "file" + ext)
+os.rename("result.mkv", "../" + file.replace(ext, ".mkv"))
+os.chdir("..")
+shutil.rmtree(sys.argv[1])
