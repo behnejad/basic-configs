@@ -9,3 +9,6 @@ bcdedit /set hypervisorlaunchtype off
 powercfg /hibernate /size 10
 
 (netsh wlan show profiles) | Select-String "\:(.+)$" | %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | %{(netsh wlan show profile name="$name" key=clear)}  | Select-String "Key Content\W+\:(.+)$" | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_} | %{[PSCustomObject]@{ PROFILE_NAME=$name;PASSWORD=$pass }} | Format-Table -AutoSize 
+
+// unistall microsoft chrome based edge
+setup.exe --uninstall --system-level --verbose-logging --force-uninstall

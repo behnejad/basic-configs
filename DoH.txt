@@ -1,0 +1,6 @@
+// DoH List:
+https://github.com/curl/curl/wiki/DNS-over-HTTPS
+https://dnscrypt.info/public-servers/
+
+// DoH
+https://dns.bebasid.com/dns-query (47.254.192.66)

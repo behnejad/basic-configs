@@ -1,9 +1,0 @@
-// DoH List:
-https://github.com/curl/curl/wiki/DNS-over-HTTPS
-https://dnscrypt.info/public-servers/
-
-// Root CA Certificates:
-https://curl.se/ca/cacert.pem
-
-// unistall microsoft chrome based edge
-setup.exe --uninstall --system-level --verbose-logging --force-uninstall
