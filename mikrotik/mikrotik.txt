@@ -1,4 +1,4 @@
-vmware to virtualbox
+vmware vm - MikroTik-RouterOS-(6|7)-(6G)-L6
 <VirtualBox>
 	<Machine>
 		<ExtraData>
@@ -9,7 +9,7 @@ vmware to virtualbox
 	</VirtualBox>
 </Machine>
 
-qcow2 to virtual box
+qemu vm - MikroTik-RouterOS-(6|7)-1G-L(4|6).qcow2
 <VirtualBox>
 	<Machine>
 		<ExtraData>
@@ -20,5 +20,16 @@ qcow2 to virtual box
 	</VirtualBox>
 </Machine>
 
-cpuid.coresPerSocket = "1"
 ide0:0.mode = "independent-persistent"
+cpuid.coresPerSocket = "1"
+qemu-img convert -f vdi test.vdi -O qcow2 test.qcow2
+
+IDE
+VBoxManage setextradata "VM name" "VBoxInternal/Devices/piix3ide/0/Config/PrimaryMaster/SerialNumber" "serial"
+VBoxManage setextradata "VM name" "VBoxInternal/Devices/piix3ide/0/Config/PrimaryMaster/FirmwareRevision" "firmware"
+VBoxManage setextradata "VM name" "VBoxInternal/Devices/piix3ide/0/Config/PrimaryMaster/ModelNumber" "model"
+
+SATA
+VBoxManage setextradata "VM name" "VBoxInternal/Devices/ahci/0/Config/Port0/SerialNumber" "serial"
+VBoxManage setextradata "VM name" "VBoxInternal/Devices/ahci/0/Config/Port0/FirmwareRevision" "firmware"
+VBoxManage setextradata "VM name" "VBoxInternal/Devices/ahci/0/Config/Port0/ModelNumber" "model"
