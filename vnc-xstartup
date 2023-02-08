@@ -1,0 +1,17 @@
+#!/bin/sh
+#.vnc/xstartup
+# vncserver :1 -rfbport 5502 -localhost no -geometry 1366x768
+
+xrdb $HOME/.Xresources
+#autocutsel -fork
+xfce4-session
+#startxfce4 &
+#xsetroot -solid grey
+#startplasma-x11 &
+
+#x-terminal-emulator -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" &
+#x-window-manager &
+# Fix to make GNOME work
+#export XKL_XMODMAP_DISABLE=1
+#/etc/X11/Xsession
+
