@@ -12,3 +12,6 @@ powercfg /hibernate /size 10
 
 // unistall microsoft chrome based edge
 setup.exe --uninstall --system-level --verbose-logging --force-uninstall
+
+services -> Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\
+defender -> HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender DisableAntiSpyware
