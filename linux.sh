@@ -1,5 +1,9 @@
+# install essentials
+sudo apt update
+sudo apt install aria2 htop bmon iotop nginx tmux net-tools ncdu
+
 # mount cifs
-sudo mount -t cifs -o user=user,password=pwd,uid=$(id -u),gid=$(id -g) //192.168.1.1/dir /mnt'
+sudo mount -t cifs -o user=xxx,password=xxx,uid=$(id -u),gid=$(id -g) //192.168.1.1/dir /mnt'
 sshfs a@a:/home/a/ /media/remote/
 
 #journalctl clean
