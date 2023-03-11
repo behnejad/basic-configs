@@ -5,6 +5,7 @@ email=""
 zone=""
 domain=""
 
+# curl http://ifconfig.me
 ip=$(curl -s -X GET "http://ipv4.icanhazip.com")
 echo "ip: $ip"
 
