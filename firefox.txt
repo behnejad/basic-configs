@@ -1,0 +1,4 @@
+about:config
+
+devtools.netmonitor.responseBodyLimit
+permissions.default.image
