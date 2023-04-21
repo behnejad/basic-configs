@@ -14,3 +14,5 @@ SystemMaxFileSize=50M
 
 # clean caches
 echo 3 | sudo tee /proc/sys/vm/drop_caches
+
+sudo su - ubuntu -c "screen -S jiso -dm java -jar jiso.jar"
