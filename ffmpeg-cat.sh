@@ -6,7 +6,7 @@ ffmpeg -i 4.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts 4.ts
 ffmpeg -i 5.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts 5.ts
 ffmpeg -i "concat:1.ts|2.ts|3.ts|4.ts|5.ts" -c copy -bsf:a aac_adtstoasc "res.mp4"
 ffmpeg -hwaccel cuda -i a.mp4 -s 1920x1080 -c:a copy b.mp4
-ffmpeg -hwaccel cuda -i a.mp4 -map 0 -c copy -c:v hevc_nvenc profile=main10 -pix_fmt p010le b.mp4
+ffmpeg -hwaccel cuda -i a.mp4 -map 0 -c copy -c:v hevc_nvenc -profile:v main10 -pix_fmt p010le b.mp4
 ffmpeg -y -hide_banner -hwaccel nvdec -hwaccel_device 0 -vsync 0 -i "input.mp4" -c copy -c:v:0 hevc_nvenc -profile:v main10 -pix_fmt p010le -rc:v:0 vbr_hq -rc-lookahead 32 -cq 21 -qmin 1 -qmax 51 -b:v:0 10M -maxrate:v:0 20M -gpu 0 "output.mkv"
 ffmpeg -y -hide_banner -vsync 0 -hwaccel cuda -hwaccel_output_format cuda  -hwaccel_device 0 -c:v:0 h264_cuvid -i "input.mp4" -vf "hwdownload,format=nv12" -c copy -c:v:0 hevc_nvenc -profile:v main10 -pix_fmt p010le -rc:v:0 vbr -tune hq -preset p5 -multipass 1 -bf 4 -b_ref_mode 1 -nonref_p 1 -rc-lookahead 75 -spatial-aq 1 -aq-strength 8 -temporal-aq 1 -cq 21 -qmin 1 -qmax 99 -b:v:0 10M -maxrate:v:0 20M -gpu 0 "output.mkv"
 ffmpeg -codecs -hide_banner -formats -filters 
