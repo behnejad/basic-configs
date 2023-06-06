@@ -13,6 +13,8 @@ firejail --dns=1.1.1.1 --net=wlx0024a59c6ea5 --defaultgw=192.168.160.1 aria2c "g
 sudo mount -t cifs -o user=xxx,password=xxx,uid=$(id -u),gid=$(id -g) //192.168.1.1/dir /mnt'
 sshfs a@a:/home/a/ /media/remote/
 
+sudo mount -t ntfs -o rw,windows_names,norecover,big_writes,streams_interface=windows,inherit /dev/sdc1 /mnt
+
 #journalctl clean
 journalctl --vacuum-size=500M
 [Journal]
