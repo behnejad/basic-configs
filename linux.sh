@@ -4,11 +4,11 @@ sudo apt install -y vim aria2 htop bmon iotop nginx tmux net-tools ethtool ncdu 
 sudo apt install -y qemu-system libvirt0 virt-manager guestfs-tools cifs-utils
 sudo apt install -y openjdk-8-jdk openjdk-11-jdk openjdk-19-jdk
 sudo apt install -y firejail notepadqq
+# wine, sublime, virtualbox, veracrypt
 
 firejail --dns=1.1.1.1 --net=wlx0024a59c6ea5 --defaultgw=192.168.160.1 aria2c "google.com"
 
-# install wine, sublime, virtualbox, veracrypt
-
+timedatectl set-local-rtc 1
 # mount cifs
 sudo mount -t cifs -o user=xxx,password=xxx,uid=$(id -u),gid=$(id -g) //192.168.1.1/dir /mnt'
 sshfs a@a:/home/a/ /media/remote/
@@ -42,7 +42,5 @@ sysctl -w fs.file-max=500000
 /etc/sysctl.conf
 soft nofile 65536
 hard nofile 65536
-
-/etc/security/limits.conf
 marin        hard nofile 4096
 marin        soft nofile 1024
