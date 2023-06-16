@@ -30,6 +30,7 @@ SystemMaxFileSize=50M
 echo 3 | sudo tee /proc/sys/vm/drop_caches
 
 sudo su - ubuntu -c "screen -S jiso -dm java -jar jiso.jar"
+hivexregedit --export NTUSER.DAT "Software\Google\Chrome\PreferenceMACs" > chrome.key
 
 # number of open files
 ulimit -a
