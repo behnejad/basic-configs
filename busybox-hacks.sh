@@ -1,4 +1,4 @@
-busybox tcpsvd -vE 0.0.0.0 2121 ./busybox ftpd -wv /
+busybox tcpsvd -vE 0.0.0.0 2121 ./busybox ftpd -Awv /
 busybox httpd -p 8080 -f -h / -vv
 busybox telnetd -l /bin/xlogin -p 2323 -F
 
