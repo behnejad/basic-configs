@@ -1,0 +1,3 @@
+https://metrics.torproject.org/sources.html
+https://metrics.torproject.org/collector.html
+https://metrics.torproject.org/collector/recent/exit-lists/
