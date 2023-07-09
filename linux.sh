@@ -15,6 +15,15 @@ sshfs a@a:/home/a/ /media/remote/
 
 sudo mount -t ntfs -o rw,windows_names,norecover,big_writes,streams_interface=windows,inherit /dev/sdc1 /mnt
 
+# overlay fs
+cd /tmp
+mkdir lower upper workdir overlay
+sudo mount -t overlay -o \
+lowerdir=/tmp/lower,\
+upperdir=/tmp/upper,\
+workdir=/tmp/workdir \
+none /tmp/overlay
+
 sudo sysctl -w net.ipv4.ip_forward=1
 echo 1 > /proc/sys/net/ipv4/ip_forward
 sudo nano /etc/sysctl.conf
