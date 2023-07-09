@@ -1,0 +1,7 @@
+# ESXI
+# SHIFT+O 
+# ESXi bootable USB->efi->boot.cfg
+
+kernelopt=runweasel cdromBoot systemMediaSize=min
+systemMediaSize=min
+autoPartitionOSDataSize=4096 # MB
