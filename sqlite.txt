@@ -2,6 +2,8 @@ https://sqlite.org/src/
 https://sqlite.org/docsrc/
 https://sqlite.org/althttpd/
 https://sqlite.org/forum/
+https://sqlite.org/see/
+https://sqlite.org/android/
 https://fossil-scm.org/
 https://fossil-scm.org/forum/
 
