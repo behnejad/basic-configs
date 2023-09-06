@@ -4,6 +4,7 @@ sudo apt install -y vim aria2 htop bmon iotop nginx tmux net-tools ethtool ncdu 
 sudo apt install -y qemu-system libvirt0 virt-manager guestfs-tools cifs-utils
 sudo apt install -y openjdk-8-jdk openjdk-11-jdk openjdk-19-jdk
 sudo apt install -y firejail notepadqq
+sudo apt install -y nethogs iptraf-ng
 # wine, sublime, virtualbox, veracrypt
 
 firejail --dns=1.1.1.1 --net=wlx0024a59c6ea5 --defaultgw=192.168.160.1 aria2c "google.com"
