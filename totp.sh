@@ -10,4 +10,14 @@ DGST=${arrIN[1]}
 LAST=`printf '%d' 0x${DGST:39}`
 NUMBER=${DGST:LAST*2:8}
 DECNUMBER=`printf "%d" $((0x${NUMBER}&0x7FFFFFFF))`
-printf "OTP: %.6d" $[DECNUMBER%1000000]
+printf "OTP: %.6d\n" $[DECNUMBER%1000000]
+
+#/etc/pam.d/common-auth
+#auth sufficient pam_google_authenticator.so
+
+#.google_authenticator
+# AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+#" RATE_LIMIT 3 30 1697957037
+#" WINDOW_SIZE 17
+#" TOTP_AUTH
+#" STEP_SIZE 60
