@@ -5,3 +5,6 @@
 kernelopt=runweasel cdromBoot systemMediaSize=min
 systemMediaSize=min
 autoPartitionOSDataSize=4096 # MB
+
+
+vmware-toolbox-cmd disk shrink /
