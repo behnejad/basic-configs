@@ -1,4 +1,5 @@
 qemu-system-x86_64 vm.qcow2 -netdev tap,id=mynet0,ifname=tap -device e1000,netdev=mynet0
+qemu-system-x86_64 qemu-system-x86_64 -netdev user,id=net1,hostfwd=tcp::8291-:8291 -device e1000,netdev=net1 -m 256m a.qcow2
 qemu-img convert -f vdi test.vdi -O qcow2 test.qcow2
 
 # mount qcow2
