@@ -14,6 +14,8 @@ timedatectl set-local-rtc 1
 sudo mount -t cifs -o user=xxx,password=xxx,uid=$(id -u),gid=$(id -g) //192.168.1.1/dir /mnt'
 sshfs a@a:/home/a/ /media/remote/
 
+ssh -oHostKeyAlgorithms=+ssh-dss
+
 sudo mount -t ntfs -o rw,windows_names,norecover,big_writes,streams_interface=windows,inherit /dev/sdc1 /mnt
 
 # overlay fs
