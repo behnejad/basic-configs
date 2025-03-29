@@ -57,3 +57,11 @@ soft nofile 65536
 hard nofile 65536
 marin        hard nofile 4096
 marin        soft nofile 1024
+
+# active directory
+sudo apt-get install realmd sssd sssd-tools adcli samba-common-bin 
+sudo realm  discover company.com
+sudo realm join --user=Administrator  faash.com
+realm list
+sudo systemctl enable sssd
+sudo systemctl start sssd
