@@ -15,3 +15,5 @@ xfce4-session
 #export XKL_XMODMAP_DISABLE=1
 #/etc/X11/Xsession
 
+# xfreerdp /u:"User name" /v:172.16.0.1:3389
+
