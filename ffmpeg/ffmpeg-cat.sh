@@ -12,3 +12,5 @@ ffmpeg -y -hide_banner -vsync 0 -hwaccel cuda -hwaccel_output_format cuda  -hwac
 ffmpeg -codecs -hide_banner -formats -filters 
 ffmpeg -h encoder=hevc_nvenc
 ffmpeg -f gdigrab -framerate 60 -i desktop a.mp4
+ffmpeg -i 1.mp4 -vf "drawtext=fontfile=./font.ttf:text='sample text':fontcolor=white:fontsize=48:box=1:boxcolor=black@0.5:boxborderw=5:x=(w-text_w-10):y=(h-text_h-10)" -c:a 2.mp4
+ffmpeg -hide_banner -i 1.mp4 -s 1280x720 2.mp2
