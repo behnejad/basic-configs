@@ -58,10 +58,31 @@ hard nofile 65536
 marin        hard nofile 4096
 marin        soft nofile 1024
 
+# netplan cloud
+network:
+    version: 2
+    ethernets:
+        eth0:
+            dhcp4: true
+            dhcp6: true
+            dhcp6-overrides:
+                use-dns: false
+            dhcp4-overrides:
+                use-dns: false
+            nameservers:
+              addresses: [94.140.14.14, 94.140.15.15, 2a10:50c0::ad1:ff, 2a10:50c0::ad2:ff]
+            match:
+                macaddress: fa:16:3e:fc:71:ee
+            mtu: 1500
+            set-name: eth0
+
 # active directory
-sudo apt-get install realmd sssd sssd-tools adcli samba-common-bin 
+%domain\ admins@DOMAIN.COM ALL=(ALL) ALL
+sudo apt -y install realmd libnss-sss libpam-sss sssd sssd-tools adcli samba-common-bin oddjob oddjob-mkhomedir packagekit
 sudo realm  discover company.com
-sudo realm join --user=Administrator  faash.com
+sudo realm join --user=Administrator  domain.com
+sudo pam-auth-update --enable mkhomedir
 realm list
+sudo realm permit --all
 sudo systemctl enable sssd
 sudo systemctl start sssd
