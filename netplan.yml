@@ -1,0 +1,16 @@
+network:
+    version: 2
+    ethernets:
+        eth0:
+            dhcp4: true
+            dhcp6: true
+            dhcp6-overrides:
+                use-dns: no
+            dhcp4-overrides:
+                use-dns: no
+            nameservers:
+                addresses: [94.140.14.14, 94.140.15.15, 2a10:50c0::ad1:ff, 2a10:50c0::ad2:ff]
+            match:
+                macaddress: fa:16:3e:e3:04:f9
+            mtu: 1500
+            set-name: eth0
