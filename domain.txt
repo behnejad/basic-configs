@@ -1,0 +1,9 @@
+%domain\ admins@DOMAIN.COM ALL=(ALL) ALL
+sudo apt -y install realmd libnss-sss libpam-sss sssd sssd-tools adcli samba-common-bin oddjob oddjob-mkhomedir packagekit
+sudo realm  discover company.com
+sudo realm join --user=Administrator  domain.com
+sudo pam-auth-update --enable mkhomedir
+realm list
+sudo realm permit --all
+sudo systemctl enable sssd
+sudo systemctl start sssd
