@@ -7,6 +7,8 @@ sudo apt install -y firejail notepadqq
 sudo apt install -y nethogs iptraf-ng
 # wine, sublime, virtualbox, veracrypt
 
+7zzs a -mx9 -snl -spf2
+
 firejail --dns=1.1.1.1 --net=wlx0024a59c6ea5 --defaultgw=192.168.160.1 aria2c "google.com"
 
 timedatectl set-local-rtc 1
