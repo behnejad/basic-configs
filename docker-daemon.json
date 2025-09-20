@@ -1,0 +1,4 @@
+{
+    "insecure-registries" : [ "x.com" ],
+    "max-concurrent-uploads": 1
+}
