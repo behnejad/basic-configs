@@ -1,3 +1,5 @@
 HKEY_CURRENT_USER\Software\Google\Chrome\PreferenceMACs
 
 "C:\Program Files\Google\Chrome\Application\chrome.exe" --user-data-dir="A:\chrome-dir"
+
+hivexregedit --export NTUSER.DAT "Software\Google\Chrome\PreferenceMACs" > chrome.key

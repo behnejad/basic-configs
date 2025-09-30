@@ -1,0 +1,5 @@
+#journalctl clean
+journalctl --vacuum-size=500M
+[Journal]
+SystemMaxUse=250M
+SystemMaxFileSize=50M
