@@ -13,3 +13,4 @@ ssh-agent $(ssh-add /media/id_rsa; git pull --all)
 git config core.autocrlf true/false
 git config --global core.fileMode false
 git config core.sshCommand "ssh -i /media/veracrypt1/id_rsa"
+ssh-keygen -p [-P old_passphrase] [-N new_passphrase] [-f keyfile]
