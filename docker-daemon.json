@@ -1,6 +1,7 @@
 {
     "insecure-registries" : [ "x.com" ],
-    "max-concurrent-uploads": 1
+    "max-concurrent-uploads": 1,
+    "dns": ["1.1.1.1"]
 }
 
 // docker stack deploy -c Docker-swarm.yml test --with-registry-auth
