@@ -8,4 +8,6 @@ sudo mount --bind /sys /mnt/sys
 
 sudo chroot /mnt
 
-grun-install /dev/sda
+grub-install /dev/sda
+grub-install --recheck /dev/sda
+update-grub2
