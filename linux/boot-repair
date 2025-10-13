@@ -1,0 +1,11 @@
+sudo mount /dev/sda7 /mnt
+sudo mount /dev/sda2 /mnt/boot/efi
+
+sudo mount --bind /dev /mnt/dev
+sudo mount --bind /dev/pts /mnt/dev/pts
+sudo mount --bind /proc /mnt/proc
+sudo mount --bind /sys /mnt/sys
+
+sudo chroot /mnt
+
+grun-install /dev/sda
