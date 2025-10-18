@@ -15,5 +15,5 @@ git config --global core.fileMode false
 git config core.sshCommand "ssh -i /media/veracrypt1/id_rsa"
 git check-ignore -- *
 git check-ignore -v -- *
-
+git check-ignore **/*
 ssh-keygen -p [-P old_passphrase] [-N new_passphrase] [-f keyfile]
