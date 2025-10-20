@@ -1,0 +1,22 @@
+concurrent = 1
+check_interval = 0
+connection_max_age = "15m0s"
+shutdown_timeout = 0
+
+[session_server]
+  session_timeout = 1800
+
+[[runners]]
+  clone_url = "ssh://git@gitlab.com"
+  name = "SRV-Gitlabr"
+  url = "http://gitlab.com"
+  id = 2
+  token = "glrt-41Er9"
+  token_obtained_at = 2025-10-20T08:13:58Z
+  token_expires_at = 0001-01-01T00:00:00Z
+  executor = "shell"
+  [runners.cache]
+    MaxUploadedArchiveSize = 0
+    [runners.cache.s3]
+    [runners.cache.gcs]
+    [runners.cache.azure]
