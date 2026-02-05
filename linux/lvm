@@ -1,0 +1,6 @@
+echo 1 > /sys/class/blocks/sda/device/rescan
+parted /dev/sda resizepart 1 100%
+xfs_growfs /mount/point
+pvresize /dev/mapper/.. /dev/sda1
+lvextend /dev/pv/lv /dev/sda1
+resize2fs /dev/sda1
