@@ -5,9 +5,6 @@ https://dnscrypt.info/public-servers/
 // DoH
 https://dns.bebasid.com/dns-query (47.254.192.66)
 
-// pihole
-sudo docker run --name pihole --network dicker --ip 192.168.88.100 -p 53:53/tcp -p 53:53/udp -e CORS_HOSTS="example.com" -e VIRTUAL_HOST="pihole.lan" -e PROXY_LOCATION="pihole.lan" -e WEBPASSWORD="webpassword" -e TZ="Asia/Tehran" -d --restart=unless-stopped pihole/pihole:latest
-
 // potplayer adds
 127.0.0.1 p1-play.edge4k.com
 127.0.0.1 p2-play.edge4k.com
