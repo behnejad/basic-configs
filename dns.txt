@@ -1,3 +1,8 @@
+https://dnscrypt.info/stamps/
+https://toolbox.googleapps.com/apps/main/
+https://github.com/AdguardTeam/dnsproxy
+https://ns.data.haus/dns-query
+
 // DoH List:
 https://github.com/curl/curl/wiki/DNS-over-HTTPS
 https://dnscrypt.info/public-servers/
