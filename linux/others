@@ -14,3 +14,4 @@ sudo su - ubuntu -c "screen -S jiso -dm java -jar jiso.jar"
 # remove ^M
 find . -type f | xargs -Ix sed -i.bak -r 's/\r//g' x
 
+sudo update-alternatives --config [program name]
