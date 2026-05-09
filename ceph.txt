@@ -1,0 +1,32 @@
+ceph
+
+ubuntu noble
+docker
+enable ssh root login
+set root password
+
+sgdisk --zap-all /dev/sdb
+wipefs --all /dev/sdb
+
+curl --silent --remote-name --location https://download.ceph.com/rpm-reef/el9/noarch/cephadm
+./cephadm add-repo --release tentacle
+./cephadm install ceph-common
+./cephadm bootstrap --mon-ip [machine ip]
+ssh-copy-id -f -i /etc/ceph/ceph.pub root@[other machines]
+ceph orch host add [other hostname] [other ip] --labels _admin
+ceph orch apply osd --all-available-devices
+
+ceph fs volume create cephfs
+
+ceph -s
+ceph orch host ls
+ceph orch device ls
+ceph osd tree
+
+sudo apt install ceph ceph-common ceph-fuse
+sudo mkdir -p /etc/ceph
+sudo scp user@ceph-mon:/etc/ceph/ceph.conf /etc/ceph/
+sudo scp user@ceph-mon:/etc/ceph/ceph.client.admin.keyring /etc/ceph/
+
+sudo ceph-fuse -m MON1_IP,MON2_IP,MON3_IP /mnt/cephfs --name client.admin --keyring /etc/ceph/ceph.client.admin.keyring
+sudo mount -t ceph MON1_IP,MON2_IP,MON3_IP:/ /mnt/cephfs -o name=client.admin,secretfile=/etc/ceph/ceph.client.admin.keyring
