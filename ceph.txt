@@ -23,6 +23,10 @@ ceph orch host ls
 ceph orch device ls
 ceph osd tree
 
+ceph shell
+echo password  > file.txt
+ceph dashboard ac-user-set-password admin -i file.txt
+
 sudo apt install ceph ceph-common ceph-fuse
 sudo mkdir -p /etc/ceph
 sudo scp user@ceph-mon:/etc/ceph/ceph.conf /etc/ceph/
