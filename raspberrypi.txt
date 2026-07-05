@@ -1,2 +1,9 @@
 manual cd preparation
 blkid /dev/sda1 -> partuuid -> cp -a -> cmdline.txt -> /etc/fstab
+
+# zero 2 w gadget mode and ethernet on usb2
+# windows driver
+# https://modclouddownloadprod.blob.core.windows.net/shared/mod-rndis-driver-windows.zip
+# https://www.einherjar.org/wp-content/uploads/2025/01/mod-rndis-driver-windows.zip
+cmdline.txt -> append at end -> modules-load=dwc2,g_ether
+config.txt -> append at [all] -> dtoverlay=dwc2,dr_mode=peripheral
