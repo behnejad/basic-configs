@@ -1,0 +1,34 @@
+mkdir -p META-INF/native-image/
+touch META-INF/native-image/reflect-config.json
+
+```
+[
+  {
+    "name": "java.lang.Class",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "queryAllPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "org.apache.logging.log4j.message.DefaultFlowMessageFactory",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "queryAllPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+ {
+     "name":"StringReverser",
+     "methods":[{"name":"reverse","parameterTypes":["java.lang.String"] }]
+ }
+]
+```
+
+auto reflection
+gralvm/bin/java -agentlib:native-image-agent=config-output-dir=META-INF/native-image -jar main-1.0-jar-with-dependencies.jar
+native-image --no-fallback -jar main-1.0-jar-with-dependencies.jar
+
