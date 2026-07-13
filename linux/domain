@@ -7,3 +7,37 @@ realm list
 sudo realm permit --all
 sudo systemctl enable sssd
 sudo systemctl start sssd
+
+
+--------- sssd.conf ---------
+[sssd]
+services = nss, pam
+config_file_version = 2
+domains = a.com
+
+[domain/a.com]
+id_provider = ldap
+auth_provider = ldap
+
+ldap_uri = ldap://1.1.1.1
+ldap_search_base = dc=a,dc=com
+ldap_default_bind_dn = a@a.com
+ldap_default_authtok_type = password
+ldap_default_authtok = password of a@a.com
+ldap_id_mapping = true
+
+ldap_schema = ad
+ldap_user_object_class = user
+ldap_user_name = sAMAccountName
+ldap_user_principal = userPrincipalName
+ldap_group_object_class = group
+
+ldap_id_use_start_tls = false
+ldap_tls_reqcert = never
+ldap_referrals = false
+
+cache_credentials = true
+enumerate = false
+use_fully_qualified_names = false
+default_shell = /bin/bash
+fallback_homedir = /home/%u
