@@ -15,3 +15,8 @@ sudo su - ubuntu -c "screen -S jiso -dm java -jar jiso.jar"
 find . -type f | xargs -Ix sed -i.bak -r 's/\r//g' x
 
 sudo update-alternatives --config [program name]
+
+# sync block device
+rsync --archive --no-whole-file --inplace --progress /dev/sda /dev/sdb
+dd if=/dev/sda of=/dev/sdb bs=64M status=progress conv=fsync
+dd if=/dev/sda of=/dev/sdb iflag=skip_bytes oflag=seek_bytes skip=1234567890 seek=1234567890 bs=1M conv=notrunc
