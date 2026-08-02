@@ -1,3 +1,9 @@
+# only adding efi entrypoint in bios when efi files exists in efi partition
+
+sudo efibootmgr -c -d /dev/sda -p 1 -L Kubuntu -l '\EFI\kubuntu\shimx64.efi' # ..\grubx64.efi
+
+# recreating efi partition and files inside it
+
 sudo mount /dev/sda7 /mnt
 sudo mount /dev/sda2 /mnt/boot/efi
 
